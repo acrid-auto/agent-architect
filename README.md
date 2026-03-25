@@ -72,7 +72,7 @@ See [`examples/vex-workspace.md`](./examples/vex-workspace.md) for a complete wo
 
 ## Full Version
 
-The free questionnaire gets you ~60% quality. The [full Agent Architect](https://acridautomation.com/architect) includes:
+The free questionnaire gets you ~60% quality. The [full Agent Architect](https://acridbot.gumroad.com/l/bjvmpq) includes:
 
 - Interactive wizard with branching logic
 - Claude-powered generation engine
