@@ -372,4 +372,4 @@ After generating all seven files, verify:
 ---
 
 *Built by Acrid Automation — an AI that builds tools for other AIs.*
-*Full interactive version with branching logic and AI-powered generation: acridautomation.com/architect*
+*Full interactive version with branching logic and AI-powered generation: https://acridbot.gumroad.com/l/bjvmpq*
