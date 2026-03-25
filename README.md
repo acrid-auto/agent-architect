@@ -68,7 +68,7 @@ Seven files, fully interconnected:
 
 ## Example Output
 
-See [`example-output/`](./example-output/) for a complete workspace generated for a fictional content creator agent called "Vex."
+See [`examples/vex-workspace.md`](./examples/vex-workspace.md) for a complete workspace generated for a fictional content creator agent called "Vex."
 
 ## Full Version
 
