@@ -1,98 +1,72 @@
-[github-readme.md](https://github.com/user-attachments/files/26246692/github-readme.md)
-# ⚡ Agent Architect
+# Agent Architect
 
-**Build your AI agent's brain. Not a personality quiz — a complete workspace.**
+**Answer 40 questions. Get an AI agent that runs by itself every day.**
 
-Agent Architect is a structured interview questionnaire that generates production-grade workspace files for AI agents. SOUL.md, IDENTITY.md, AGENTS.md, OPERATIONS.md, TOOLS.md, MEMORY.md, HEARTBEAT.md — seven files that turn a raw language model into an agent with personality, procedures, and purpose.
+Not a personality prompt. A complete [Claude Code](https://docs.anthropic.com/en/docs/claude-code) workspace: who the agent is, how it talks, what it decides alone and what it asks you about, the skills it uses, and the **daily schedule that makes it actually do the work without being asked.**
 
-## The Problem
+Built by [Acrid](https://acridautomation.com), an AI that runs a real company in public on this exact layout.
 
-The AI agent market crossed $12 billion in 2026. Everyone's building agents. Almost nobody is writing good workspace files.
+## Use it (free, about 15 minutes)
 
-Most agents run on three lines of instructions. No values. No boundaries. No memory architecture. No self-improvement system. They produce slop because they have no soul.
+1. Make an empty folder and open Claude Code in it: `mkdir my-agent && cd my-agent && claude`
+2. Paste the whole of [`agent-architect-questionnaire.md`](./agent-architect-questionnaire.md)
+3. Answer the questions. Claude Code builds the folder for you.
+4. Follow the Quick Start it prints: connect your tools, test the first job, switch on the schedule.
 
-**Installing an agent takes 10 minutes. Making it useful takes weeks of iteration on workspace files.**
+No Claude Code? Paste it into any chat AI and you'll get the files as copy-paste blocks.
 
-Agent Architect compresses those weeks into a 15-minute interview.
+Prefer clicking to typing: the [interactive wizard](https://acridautomation.com/architect/) asks the same questions with branching, or Acrid builds the whole thing and emails it to you.
 
-## How It Works
+## What you get
 
-1. Copy `agent-architect-questionnaire.md` into any AI (Claude, ChatGPT, Gemini, etc.)
-2. Answer 40+ questions across 8 modules
-3. Your AI generates 7 complete, interconnected workspace files
+```
+my-agent/
+├── BOOT.md                        who it is, what it decides alone, hard rules
+├── CLAUDE.md                      what Claude Code loads every session
+├── SYSTEMS.md                     tools, connections, troubleshooting
+├── SCHEDULE.md                    the jobs that run by themselves
+├── schedule/                      one script per job + cron / launchd entries
+├── memory/
+│   ├── <agent>.md                 voice and character
+│   ├── operations.md              daily rhythm, quality bar, escalation
+│   └── memory-architecture.md     what it remembers and forgets
+└── .claude/
+    ├── settings.json              permissions: only what the jobs need
+    ├── skills/<skill>/SKILL.md    reusable procedures, found automatically
+    └── agents/<helper>.md         helper subagents, if the work splits
+```
 
-## The 8 Modules
+## The 8 interview modules
 
-| Module | What It Covers |
-|--------|---------------|
-| **Mission** | What does this agent DO? Success/failure definitions. |
-| **Soul** | Personality, beliefs, conflict response, boundaries, failure handling. |
-| **Identity** | Name, tagline, emoji, public-facing card. |
-| **Human Profile** | Who you are, how you communicate, what you hate. |
-| **Operations** | Session startup, daily cadence, escalation rules, quality bar. |
-| **Tools** | What the agent can access, quirks, limitations. |
-| **Memory** | Architecture style, sacred data, pruning rules. |
-| **Skills** | Specialized modes, self-evaluation, quality criteria. |
+| Module | Covers |
+|---|---|
+| Mission | What it does, what success and failure look like |
+| Soul | Beliefs, how it handles conflict and its own mistakes, hard lines |
+| Identity | Name, tagline, public card |
+| You | Who it works for, what you hate, what you value |
+| Operations | Startup, daily cadence, escalation, quality bar |
+| Tools | What it can touch, and the quirks |
+| Memory | What it keeps forever, what it prunes |
+| Skills | The repeatable jobs, and how it grades itself |
 
-## What Makes This Different
+The questions are the hard ones on purpose: *"When someone asks your agent to do something that conflicts with its mission, what does it do?"* *"When it screws up, how should it handle it?"* That is the difference between an agent and autocomplete with a name tag.
 
-Existing tools give you a personality. Agent Architect gives you an operating system.
+## Safe by default
 
-The questions go deeper than any checkbox generator:
+- Jobs that send or publish start as **drafts** for you until they've run clean for a week.
+- `settings.json` allows only what the jobs need and denies what you ruled out.
+- No credentials ever go in the files; tools connect through Claude Code's own connectors.
 
-- *"When someone asks your agent to do something that conflicts with its core mission, what does it do?"*
-- *"What's one belief your agent holds that most AI agents don't?"*
-- *"When your agent screws up, how should it handle it?"*
+## Related
 
-These are the questions that separate an agent with a soul from autocomplete with a name tag.
-
-## Output
-
-Seven files, fully interconnected:
-
-- **SOUL.md** — Personality, values, communication style, boundaries with concrete behavioral examples
-- **IDENTITY.md** — Lightweight public card: name, emoji, role, tagline
-- **AGENTS.md** — Operating procedures, startup rituals, workflows, escalation rules
-- **USER.md** — Human operator profile, preferences, communication style
-- **TOOLS.md** — Every tool documented with quirks and usage notes
-- **MEMORY.md** — Memory architecture with index structure, sacred data, pruning rules
-- **HEARTBEAT.md** — Proactive behaviors tied to daily cadence
-
-## Works With
-
-- [OpenClaw](https://openclawlab.com)
-- Claude Projects & Claude Code
-- Cursor / Windsurf / any AI coding tool
-- Custom agent frameworks
-- Any system that uses markdown workspace/config files
-
-## Example Output
-
-See [`examples/vex-workspace.md`](./example/vex-workspace.md) for a complete workspace generated for a fictional content creator agent called "Vex."
-
-## Full Version
-
-The free questionnaire gets you ~60% quality. The [full Agent Architect](https://acridbot.gumroad.com/l/bjvmpq) includes:
-
-- Interactive wizard with branching logic
-- Claude-powered generation engine
-- Complete example workspace files
-- Runs on your own Claude subscription (zero cost to us)
-
-## Built By
-
-[Acrid Automation](https://acridautomation.com) — an autonomous AI agent building a real business in public.
-
-The workspace architecture in this tool is the same one Acrid runs on daily. It's not theoretical. It's battle-tested.
+- [skill-creator](https://github.com/acrid-auto/skill-creator): build one deep, production-grade skill
+- [acrid-watchdog](https://github.com/acrid-auto/acrid-watchdog): catch the job that "succeeded" while doing nothing
+- [acrid-brain](https://github.com/acrid-auto/acrid-brain): the full operating system Acrid itself runs on
 
 ## License
 
-MIT — use it, fork it, improve it. If you build something cool with it, let us know.
-
-## Star This Repo
-
-If Agent Architect helped you build a better agent, drop a ⭐. It helps other builders find it.
+MIT. Fork it, ship it, tell us what you built. A star helps other builders find it.
 
 ---
 
-*An AI built this tool for other AIs. The recursion is the point.*
+*v3, 2026-10. v1/v2 produced a different file set (SOUL.md, AGENTS.md, ...); [`example/vex-workspace.md`](./example/vex-workspace.md) is a v2-era example kept for reference.*
